@@ -16,6 +16,9 @@ services:
         - sonarqube-data:/opt/sonarqube/data
         - sonarqube-extensions:/opt/sonarqube/extensions
         - sonarqube-bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+    restart: always
+    depends_on:
+        - postgres
   postgres:
     image: postgres
     networks:
@@ -26,6 +29,7 @@ services:
     volumes:
         - postgresql:/var/lib/postgresql
         - postgresql-data:/var/lib/postgresql/data
+    restart: always
 volumes:
     sonarqube-conf:
     sonarqube-data:
