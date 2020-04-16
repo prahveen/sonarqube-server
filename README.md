@@ -34,5 +34,22 @@
             $ _path_to_downloaded_cli\bin\sonar-scanner
         ```
 
+## Run scanner for dotnet core app
+    * Install sonarscanner dev tool
+    ```
+        $ dotnet tool install --global dotnet-sonarscanne
+    ```
+
+    * Run below command to scan
+    ```
+        $ dotnet sonarscanner begin /k:"parkly-backend" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="ff4d45d148eed652f85c0b8fed5ca64c1a28179f"
+
+        $ dotnet build
+
+        $ dotnet sonarscanner end /d:sonar.login="ff4d45d148eed652f85c0b8fed5ca64c1a28179f"
+
+    ```
+
+
 
 
